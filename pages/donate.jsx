@@ -62,8 +62,8 @@ function DonatePage() {
                 </div>
                 <div className='flex flex-col gap-y-3'>
                     {
-                        charities.map((doc) => (
-                            <CardForCharity obj={doc} />
+                        charities.map((doc, key) => (
+                            <CardForCharity key={key} obj={doc} />
                         ))
                     }
                 </div>

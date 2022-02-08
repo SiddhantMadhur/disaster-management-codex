@@ -37,49 +37,49 @@ export default function Home() {
           <div className='text-center font-bold text-3xl pt-5'>
             Our Highlights
           </div>
-          <div class="sm:flex flex-wrap justify-center items-center pb-5 text-center gap-8">
-            <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4 bg-white mt-6  shadow-lg rounded-lg dark:bg-gray-800">
-              <div class="flex-shrink-0">
-                <div class="flex items-center mx-auto justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          <div className="sm:flex flex-wrap justify-center items-center pb-5 text-center gap-8">
+            <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4 bg-white mt-6  shadow-lg rounded-lg dark:bg-gray-800">
+              <div className="flex-shrink-0">
+                <div className="flex items-center mx-auto justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
               </div>
-              <h3 class="text-2xl sm:text-xl text-gray-700 font-semibold dark:text-white py-4">
+              <h3 className="text-2xl sm:text-xl text-gray-700 font-semibold dark:text-white py-4">
                 Informational
               </h3>
-              <p class="text-md  text-gray-500 dark:text-gray-300 py-4">
+              <p className="text-md  text-gray-500 dark:text-gray-300 py-4">
                 The goal of our website was to condense informational content within the span of a couple of pages so you could be informed on what to do in a worst case scenario.D
               </p>
             </div>
-            <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4 mt-6 sm:mt-16 md:mt-20 lg:mt-24 bg-white shadow-lg rounded-lg dark:bg-gray-800">
-              <div class="flex-shrink-0">
-                <div class="flex items-center mx-auto justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+            <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4 mt-6 sm:mt-16 md:mt-20 lg:mt-24 bg-white shadow-lg rounded-lg dark:bg-gray-800">
+              <div className="flex-shrink-0">
+                <div className="flex items-center mx-auto justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
                   </svg>
                 </div>
               </div>
-              <h3 class="text-2xl sm:text-xl text-gray-700 font-semibold dark:text-white py-4">
+              <h3 className="text-2xl sm:text-xl text-gray-700 font-semibold dark:text-white py-4">
                 Communication
               </h3>
-              <p class="text-md text-gray-500 dark:text-gray-300 py-4">
+              <p className="text-md text-gray-500 dark:text-gray-300 py-4">
                 We have a forum available to everyone, where you can share your thoughts and any advice you may hold, while others do the same, creating a community around the world.
               </p>
             </div>
-            <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 mt-6  px-4 py-4 bg-white shadow-lg rounded-lg dark:bg-gray-800">
-              <div class="flex-shrink-0">
-                <div class="flex items-center mx-auto justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+            <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 mt-6  px-4 py-4 bg-white shadow-lg rounded-lg dark:bg-gray-800">
+              <div className="flex-shrink-0">
+                <div className="flex items-center mx-auto justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
                   </svg>
                 </div>
               </div>
-              <h3 class="text-2xl sm:text-xl text-gray-700 font-semibold dark:text-white py-4">
+              <h3 className="text-2xl sm:text-xl text-gray-700 font-semibold dark:text-white py-4">
                 Alerts
               </h3>
-              <p class="text-md  text-gray-500 dark:text-gray-300 py-4">
+              <p className="text-md  text-gray-500 dark:text-gray-300 py-4">
                 Stay alerted with our Alerts page that gives you the latest news on natural disasters all around the world.
               </p>
             </div>
@@ -93,8 +93,8 @@ export default function Home() {
           </div>
 
           {
-            mapOfSite.map((doc) => (
-              <MapCard obj={doc} />
+            mapOfSite.map((doc, key) => (
+              <MapCard obj={doc} key={key} />
             ))
           }
 

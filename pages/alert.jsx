@@ -40,8 +40,8 @@ function AlertPage() {
                 <div>
 
                     {
-                        newsAlerts.map((doc) => (
-                            <p>
+                        newsAlerts.map((doc, key) => (
+                            <p key={key}>
                                 {doc.fields.title}
                             </p>
                         ))
