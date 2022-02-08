@@ -16,8 +16,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Link from 'next/link';
-import { createClient } from '@supabase/supabase-js';
-
+import { supabase } from '../server/supabaseConfig';
+import { useRouter } from 'next/router';
 
 
 const drawerWidth = 250;
@@ -38,7 +38,7 @@ const accountLinks = [
   },
   {
     name: 'Sign Out',
-    href: '/auth/register',
+    href: '/auth/leave',
     emoji: '🛑'
   }
 ]
@@ -93,6 +93,13 @@ function NavCard(props) {
 function NavBar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+
+
+  const router = useRouter()
+  supabase.auth.onAuthStateChange(()=>{
+    router.push('/')
+  })
+
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
