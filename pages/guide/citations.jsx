@@ -36,6 +36,12 @@ function CitationsPage() {
             <Citation>
                 https://www.ready.gov/
             </Citation>
+            <Citation>
+                https://www.givewell.org/
+            </Citation>
+            <Citation>
+                https://disasters.liveuamap.com/
+            </Citation>
         </div>
 
     </div>;

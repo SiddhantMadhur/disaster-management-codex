@@ -91,17 +91,19 @@ function SpecificDiscussion({ data, id }) {
                     </div>
                 </article>
             </main>
-            <div>
-                <div className='flex flex-col gap-y-2 text-left justify-center bg-white rounded-lg p-3 md:p-10'>
-                    {user?.user_metadata.username}
-                    <textarea value={text} onChange={e => setText(e.target.value)} placeholder='Comment...' type="text" className='border-2 border-black rounded-xl p-2' rows={2} />
-                    <button onClick={postComment} className='bg-gray-700 hover:bg-gray-900 hover:text-gray-300 text-gray-100 text-xl rounded-lg py-1 '>
-                        {
-                            loading ? <CircularProgress /> : 'POST'
-                        }
-                    </button>
-                </div>
-            </div>
+            {
+                    user ? (
+                        <div className='flex flex-col gap-y-2 text-left justify-center bg-white rounded-lg p-3 md:p-10'>
+                            {user?.user_metadata.username}
+                            <textarea value={text} onChange={e => setText(e.target.value)} placeholder='Comment...' type="text" className='border-2 border-black rounded-xl p-2' rows={2} />
+                            <button onClick={postComment} className='bg-gray-700 hover:bg-gray-900 hover:text-gray-300 text-gray-100 text-xl rounded-lg py-1 '>
+                                {
+                                    loading ? <CircularProgress /> : 'POST'
+                                }
+                            </button>
+                        </div>
+                    ) : (undefined)
+                }
             <div className='flex flex-col text-left justify-center bg-white rounded-lg p-3 md:p-10'>
                 <h1>
                     Comments:
@@ -110,7 +112,7 @@ function SpecificDiscussion({ data, id }) {
                     {
                         comments.map((doc, key) => (
                             <div key={key} className='flex gap-2'>
-                                <div  className='font-semibold'>
+                                <div className='font-semibold'>
                                     {doc.username}
                                 </div>
                                 <div>

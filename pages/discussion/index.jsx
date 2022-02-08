@@ -4,6 +4,7 @@ import { supabase } from "../../server/supabaseConfig"
 import Link from "next/link";
 import { data } from "autoprefixer";
 import Head from "next/head";
+import MyModal from "../../components/modal";
 
 
 function AddInfo() {
@@ -14,6 +15,8 @@ function AddInfo() {
 
     const user = supabase.auth.user();
     const username = user.user_metadata.username;
+
+    
 
     const postDiscussion = async () => {
         setLoading(true)
@@ -96,18 +99,21 @@ export default function DiscussionBoard() {
     const [loading, setLoading] = useState(true)
     const [recordedData, setRecordedData] = useState([])
 
+    const user = supabase.auth.user()
+
     useEffect(()=>{
         const getData = async () => {
             const { data, error } = await supabase.from('forum').select()
             setRecordedData(data)
             setLoading(false)
-            console.log(data)
+            console.log(user)
+
         }
         getData()
         
     },[])
 
-    
+    const [modal, setModal] = useState(false)
 
     return (
         <div>
@@ -117,11 +123,22 @@ export default function DiscussionBoard() {
             <div>
                 {
                     add ? (<AddInfo />) : (
-                        <button onClick={() => setAdd(true)} className="text-center w-full flex hover:bg-gray-50 transition justify-center bg-white py-5 rounded-xl text-2xl">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" />
-                            </svg>
-                        </button>
+                        <div>
+                            {
+                                (user)?(
+                                    <button onClick={() => {
+                                            setAdd(true)
+                                    }} className="text-center w-full flex hover:bg-gray-50 transition justify-center bg-white py-5 rounded-xl text-2xl">
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" />
+                                        </svg>
+                                    </button>
+                                ):(
+                                    <MyModal />
+                                )
+                            }
+                        </div>
+                        
                     )
                 }
             </div>
