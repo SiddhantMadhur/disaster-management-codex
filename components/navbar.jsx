@@ -50,13 +50,8 @@ const links = [
     emoji: '🏠'
   },
   {
-    name: 'Report-a-Disaster',
-    href: '/report',
-    emoji: '🌋'
-  },
-  {
-    name: 'Help',
-    href: '/help',
+    name: 'Guide',
+    href: '/guide',
     emoji: '❓'
   },
   {
@@ -67,21 +62,30 @@ const links = [
   {
     name: 'Donate',
     href: '/donate',
-    emoji: '💵'
+    emoji: '🆘'
+  },
+  {
+    name: 'Citations',
+    href: '/guide/citations',
+    emoji: '📜'
   }
 ]
 
 function NavCard(props) {
   return (
     <Link href={props.href} className='w-fit'>
-      <a className='flex my-3 mx-4 gap-x-3  px-1 py-2 rounded-xl bg-gray-100 hover:translate-x-2 transition text-lg ' >
-        <div className='text-2xl'>
-          {props.emoji}
-        </div>
-        <div className='my-auto'>
-          {props.name}
-        </div>
-      </a>
+      <button className='w-full' onClick={()=>{
+        props.closeTab(false)
+      }}>
+        <a className='flex my-3 mx-4 gap-x-3  px-1 py-2 rounded-xl bg-gray-100 hover:translate-x-2 transition text-lg ' >
+          <div className='text-2xl'>
+            {props.emoji}
+          </div>
+          <div className='my-auto'>
+            {props.name}
+          </div>
+        </a>
+      </button>
     </Link>
   )
 }
@@ -96,7 +100,7 @@ function NavBar(props) {
 
 
   const router = useRouter()
-  supabase.auth.onAuthStateChange(()=>{
+  supabase.auth.onAuthStateChange(() => {
     router.push('/')
   })
 
@@ -112,7 +116,7 @@ function NavBar(props) {
       <List>
         {
           links.map((doc, key) => (
-            <NavCard key={key} emoji={doc.emoji} name={doc.name} href={doc.href} />
+            <NavCard key={key} closeTab={setMobileOpen} emoji={doc.emoji} name={doc.name} href={doc.href} />
           ))
         }
       </List>
@@ -120,10 +124,10 @@ function NavBar(props) {
       <List className='absolute bottom-0 w-full'>
         {
           session ? (accountLinks.map((doc, key) => (
-            <NavCard key={key} emoji={doc.emoji} name={doc.name} href={doc.href} />
+            <NavCard key={key} closeTab={setMobileOpen} emoji={doc.emoji} name={doc.name} href={doc.href} />
           ))) : (
             loggedOutLinks.map((doc, key) => (
-              <NavCard key={key} emoji={doc.emoji} name={doc.name} href={doc.href} />
+              <NavCard key={key} closeTab={setMobileOpen} emoji={doc.emoji} name={doc.name} href={doc.href} />
             ))
           )
         }
@@ -147,12 +151,20 @@ function NavBar(props) {
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
-          backgroundColor: 'transparent'
+          backgroundColor: 'white'
         }}
       >
         <Toolbar>
-          
-          
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: 'none' }, color: 'black' }}
+          >
+            <MenuIcon />
+          </IconButton>
+
         </Toolbar>
       </AppBar>
       <Box
