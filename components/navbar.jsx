@@ -50,6 +50,11 @@ const links = [
     emoji: '🏠'
   },
   {
+    name: 'Alerts',
+    href: '/alert',
+    emoji:'📢'
+  },
+  {
     name: 'Guide',
     href: '/guide',
     emoji: '❓'
@@ -60,7 +65,7 @@ const links = [
     emoji: '👥'
   },
   {
-    name: 'Donate / Volunteer',
+    name: 'Donate / Support',
     href: '/donate',
     emoji: '🆘'
   },

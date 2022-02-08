@@ -31,7 +31,7 @@ function SpecificDiscussion({ data, id }) {
                 post_id: id
             })
             setComments(data)
-            console.log(data)
+
         }
         getComments()
     }, [])
