@@ -8,7 +8,7 @@ const Card = (props) => {
     return (
         <div className="flex flex-col  md:flex-row bg-white w-full rounded-lg py-1 px-3">
             <div className="flex-none">
-                <Image width={150} height={150} src={`/../public/images/${props.svg}`}></Image>
+                <Image width={150} height={150} src={`/images/${props.svg}`}></Image>
             </div>
             <div className="p-2">
                 <h1 className="text-3xl flex-none mt-3">

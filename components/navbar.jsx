@@ -60,7 +60,7 @@ const links = [
     emoji: '👥'
   },
   {
-    name: 'Donate',
+    name: 'Donate / Volunteer',
     href: '/donate',
     emoji: '🆘'
   },
@@ -144,7 +144,7 @@ function NavBar(props) {
 
   return (
     <Box sx={{ display: 'flex' }}>
-      <CssBaseline />
+      
       <AppBar
         elevation={0}
         position="fixed"
@@ -169,7 +169,7 @@ function NavBar(props) {
       </AppBar>
       <Box
         component="nav"
-        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 }, backgroundColor: 'blue' }}
         aria-label="mailbox folders"
       >
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
@@ -204,7 +204,7 @@ function NavBar(props) {
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
         <Toolbar />
-        <div>
+        <div className='bg-[#fdf1e5]'>
           {props.children}
         </div>
       </Box>
